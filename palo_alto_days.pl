@@ -16,5 +16,14 @@ palo_alto(don, wednesday).
 palo_alto(don, thursday).
 palo_alto(don, friday).
 
+sf(jesse, monday).
+sf(jesse, tuesday).
 palo_alto(jesse, wednesday).
+sf(jesse, thursday).
+sf(jesse, friday).
+
+sf(charles, monday).
+sf(charles, tuesday).
 palo_alto(charles, wednesday).
+sf(charles, thursday).
+sf(charles, friday).

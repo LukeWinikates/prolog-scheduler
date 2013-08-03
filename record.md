@@ -18,3 +18,15 @@ Since we don't usually pair people multiple days in a row, we want to try to mak
 I've never written in Prolog before, but I read about it in '7 languages in 7 weeks', and this sounds like a good problem for it solve. I'd like to try.
 
 Let's start out with some Prolog-isms. Prolog starts off with lists of facts.
+
+so the first facts that I'll list are which days the team is in palo alto. If they're not in Palo Alto, maybe they're somewhere else, but they can remote pair.
+
+{{put the initial commit version of palo_alto.pl here}}
+
+So what's next. We need to tell it some rules about pairing. Good candidates are:
+
+Prefer pairing with somebody different from the person from yesterday.
+Prefer local pairing over remote pairing.
+
+Ok, I forgot-- if you're in sf, it's better to pair with somebody is sf than palo alto
+
