@@ -87,5 +87,54 @@ What = jesse
 
 (1 ms) yes
 | ?-
+
+hat = wednesday ? ;
+
+What = thursday ? ;
+
+What = friday ? ;
+
+no
+| ?- in(What, wednesday, luke).
+
+What = palo_alto ? ;
+
+no
+| ?- in(What, wednesday, What).
+
+no
+| ?- in(What, wednesday, Why).
+
+What = palo_alto
+Why = luke ? ;
+
+What = palo_alto
+Why = phil ? ;
+
+What = palo_alto
+Why = don ? ;
+
+What = palo_alto
+Why = charles ? ;
+
+What = palo_alto
+Why = jesse ? ;
+
+(1 ms) no
+| ?- in(What, monday, Why).
+
+What = palo_alto
+Why = luke ? ;
+
+What = palo_alto
+Why = phil ? ;
+
+What = palo_alto
+Why = don ? ;
+
+What = sf
+Why = charles ? ;
+
+What = sf
 ---
 
