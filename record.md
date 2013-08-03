@@ -152,3 +152,5 @@ good_pair(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
 
 
 we should rename that to same_place
+
+a quick mention-- I was reading about Git Best Practices (committing often for checkpointing purposes, even when you don't have a good state per se). I also watched the latest video from the WorryDream guy, which briefly mentioned Prolog under the heading of goal-based programming. That inspired my approach for writing this blog post, both in terms of experimenting with Prolog and with keeping the git log of the composition of this post.
