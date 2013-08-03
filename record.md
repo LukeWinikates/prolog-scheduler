@@ -138,3 +138,17 @@ Why = charles ? ;
 What = sf
 ---
 
+Oh, crazy. I can use an Capitalized symbol as a variable to filled in with possible solutions.
+
+Let's add a rule. Two Pivots are a good pair if they're in the same place on the same day. There will be other criteria. And Prolog is better at "solve for X" than it is at "optimize for X" (which is a problem with different algorithmic complexity(?))
+
+Turns out order of operations matters a lot. if I express my rule with the X != Y part first, I get no matches for some of my scenarios. Putting it last seems to work better.
+
+good_pair(X, Y, Day) :- \+(X=Y), in(Z, Day, X), in(Z, Day, Y).
+
+vs
+
+good_pair(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
+
+
+we should rename that to same_place

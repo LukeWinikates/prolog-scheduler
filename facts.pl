@@ -27,3 +27,5 @@ in(sf, tuesday, jesse).
 in(palo_alto, wednesday, jesse).
 in(sf, thursday, jesse).
 in(sf, friday, jesse).
+
+good_pair(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
