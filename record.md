@@ -154,3 +154,43 @@ good_pair(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
 we should rename that to same_place
 
 a quick mention-- I was reading about Git Best Practices (committing often for checkpointing purposes, even when you don't have a good state per se). I also watched the latest video from the WorryDream guy, which briefly mentioned Prolog under the heading of goal-based programming. That inspired my approach for writing this blog post, both in terms of experimenting with Prolog and with keeping the git log of the composition of this post.
+
+
+---
+moving on: I want to end up with a data structure representing a schedule. It could look something like this:
+
+monday: [
+  pair(luke, phil).
+  pair(jesse, charles).
+  solo(don)
+]
+
+tuesday: [
+  pair(luke, charles).
+  pair(jesse, don).
+  solo(phil).
+]
+
+wednesday: [
+  pair(charles, don).
+  pair(phil, jesse).
+  solo(luke)
+]
+
+thursday: [
+  pair(don, luke).
+  pair(charles, phil).
+  solo(jesse).
+]
+
+friday: [
+  pair(luke, jesse).
+  pair(don, phil).
+  solo(charles).
+]
+
+I've just written a tolerable schedule for our rotation: everybody solos once; we remote pair 3 days.
+
+I think we can define this in terms of rules using Prolog data structures without too much trouble. solo(X) is a pair of (X) and the mystery symbol nobody.
+
+A schedule is a day plus a list such that all people have a pair (including solo). In fact maybe solo(X) is just pair(X); pair with an arity of 1 instead of 2.

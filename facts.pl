@@ -28,4 +28,12 @@ in(palo_alto, wednesday, jesse).
 in(sf, thursday, jesse).
 in(sf, friday, jesse).
 
-good_pair(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
+in_same_place(X, Y, Day) :- in(Z, Day, X), in(Z, Day, Y), \+(X=Y).
+
+next_day(monday, tuesday).
+next_day(tuesday, wednesday).
+next_day(wednesday, thursday).
+next_day(thursday, friday).
+
+last_day(X, Y) :- next_day(Y, X).
+
