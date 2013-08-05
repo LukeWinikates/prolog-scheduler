@@ -194,3 +194,7 @@ I've just written a tolerable schedule for our rotation: everybody solos once; w
 I think we can define this in terms of rules using Prolog data structures without too much trouble. solo(X) is a pair of (X) and the mystery symbol nobody.
 
 A schedule is a day plus a list such that all people have a pair (including solo). In fact maybe solo(X) is just pair(X); pair with an arity of 1 instead of 2.
+
+A week_schedule is a schedule for the five work days of the week, such that people don't pair on consecutive days.
+
+I think that this is a feasible way to build this up. Prolog will solve all possible schedules for us. Maybe then we can add additional constraints to make it find the best possible schedule (1 day of soloing, SF pivots pair with PA pivots on wednesday, no repeat pairing, no soloing for new people, nobody remote pairs more than twice). Or maybe we can attach scores to schedules based how many times these rules are violated, and let prolog churn them all out and then rank them. That wouldn't be terribly efficient, but for N of 5, we might not need to worry about its Big-O properties.
