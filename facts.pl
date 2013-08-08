@@ -37,3 +37,23 @@ next_day(thursday, friday).
 
 last_day(X, Y) :- next_day(Y, X).
 
+person(luke).
+person(charles).
+person(don).
+person(phil).
+person(jesse).
+
+pair(X, Y) :-  person(X), person(Y), \+(X=Y).
+
+all_people([]).
+all_people([Head|Tail]) :-
+  person(Head), all_people(Tail).
+
+no_duplicates(L) :- % this is from: http://stackoverflow.com/questions/9005953/testing-whether-a-list-represents-a-set-with-no-duplicates
+  setof(X, member(X, L), Set),
+  length(Set, Len),
+  length(L, Len).
+
+% a schedule is a list of pairs such that every person appears once
+schedule(Pairs) :- Pairs = [A, B, C, D, E],
+  all_people(Pairs), no_duplicates(Pairs).

@@ -198,3 +198,9 @@ A schedule is a day plus a list such that all people have a pair (including solo
 A week_schedule is a schedule for the five work days of the week, such that people don't pair on consecutive days.
 
 I think that this is a feasible way to build this up. Prolog will solve all possible schedules for us. Maybe then we can add additional constraints to make it find the best possible schedule (1 day of soloing, SF pivots pair with PA pivots on wednesday, no repeat pairing, no soloing for new people, nobody remote pairs more than twice). Or maybe we can attach scores to schedules based how many times these rules are violated, and let prolog churn them all out and then rank them. That wouldn't be terribly efficient, but for N of 5, we might not need to worry about its Big-O properties.
+
+---
+
+refining this somewhat, we can define a schedule more easily by using a plain old list. It must be only people, and there must be no duplicates. It needs to also ensure that it includes ALL the people.
+
+Maybe it's time to revisit how to ask the question. I'd like to be able to constrain it in various ways, computing a full week's or partial week's schedule. It needs to plan for wednesday's constraints on the earlier days of the week. But given a free enough hand, Prolog probably does this already.
