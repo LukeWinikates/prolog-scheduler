@@ -54,6 +54,14 @@ no_duplicates(L) :- % this is from: http://stackoverflow.com/questions/9005953/t
   length(Set, Len),
   length(L, Len).
 
+
 % a schedule is a list of pairs such that every person appears once
 schedule(Pairs) :- Pairs = [A, B, C, D, E],
   all_people(Pairs), no_duplicates(Pairs).
+
+% a plan is 5 schedules, such that nobody pairs with the same person two days in a row.
+plan(Days) :- Days = [Day1|[Day2|Tail]],
+  no_repeats(Day1, Day2).
+
+% there are no repeats if chopping both lists into chunks of two elements each (pairs) does not produce any identical sets.
+no_repeats(Day1, Day2) :- 
