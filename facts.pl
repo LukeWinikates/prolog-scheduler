@@ -60,8 +60,8 @@ schedule(Pairs) :- Pairs = [A, B, C, D, E],
   all_people(Pairs), no_duplicates(Pairs).
 
 % a plan is 5 schedules, such that nobody pairs with the same person two days in a row.
-plan(Days) :- Days = [Day1|[Day2|Tail]],
-  no_repeats(Day1, Day2).
+%plan(Days) :- Days = [Day1|[Day2|Tail]],
+  %no_repeats(Day1, Day2).
 
+identical_pair(Pair1, Pair2) :- insert_sort(Pair1, Z), insert_sort(Pair2, Z).
 % there are no repeats if chopping both lists into chunks of two elements each (pairs) does not produce any identical sets.
-no_repeats(Day1, Day2) :- 

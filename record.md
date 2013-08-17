@@ -204,3 +204,6 @@ I think that this is a feasible way to build this up. Prolog will solve all poss
 refining this somewhat, we can define a schedule more easily by using a plain old list. It must be only people, and there must be no duplicates. It needs to also ensure that it includes ALL the people.
 
 Maybe it's time to revisit how to ask the question. I'd like to be able to constrain it in various ways, computing a full week's or partial week's schedule. It needs to plan for wednesday's constraints on the earlier days of the week. But given a free enough hand, Prolog probably does this already.
+
+----
+A revelation: In prolog, rules look like functions, but they're not. A function has inputs and produces output. Prolog rules have arity, but what any parameter can be left out. A prolog rule can be invoked in many directions, and can act like many functions at once: up to N! directions, where N is the arity of the rule.
